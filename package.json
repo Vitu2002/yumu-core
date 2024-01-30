@@ -3,12 +3,9 @@
     "version": "1.1.0",
     "description": "Just another discord bot boilerplate.",
     "main": "dist/index.js",
-    "author": "Vitor Lach <contact@vitorlach.dev>",
+    "author": "Vitu2002 <contato@vitu2002.dev>",
     "license": "MIT",
     "private": false,
-    "engines": {
-        "node": "^16"
-    },
     "scripts": {
         "build": "tsup src",
         "dev": "tsx watch src/index.ts",
@@ -27,7 +24,7 @@
     "dependencies": {
         "colors": "1.4.0",
         "dayjs": "^1.11.9",
-        "discord.js": "14.13.0",
-        "dotenv": "16.3.1"
+        "discord.js": "^14.13.0",
+        "dotenv": "^16.3.1"
     }
 }
