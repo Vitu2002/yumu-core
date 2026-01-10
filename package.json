@@ -1,30 +1,28 @@
 {
     "name": "yumu-core",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Just another discord bot boilerplate.",
     "main": "dist/index.js",
-    "author": "Vitu2002 <contato@vitu2002.dev>",
+    "author": "Vitu2002 <contact@vitu2002.dev>",
     "license": "MIT",
     "private": false,
     "scripts": {
-        "build": "tsup src",
-        "dev": "tsx watch src/index.ts",
-        "start": "node dist/index.js"
+        "dev": "bun run --watch src/index.ts",
+        "build": "bun build src/index.ts --outdir=dist --target=node",
+        "start": "bun run dist/index.js",
+        "dev:node": "ts-node-dev --respawn src/index.ts",
+        "build:node": "tsc",
+        "start:node": "node dist/index.js"
     },
     "devDependencies": {
-        "eslint": "^8.48.0",
-        "eslint-config-prettier": "^8.10.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "prettier": "^2.8.8",
-        "prettier-plugin-prisma": "^4.17.0",
-        "tsup": "^7.2.0",
-        "tsx": "^3.12.7",
-        "typescript": "^5.2.2"
+        "bun-types": "^1.3.5",
+        "typescript": "^5.2.2",
+        "ts-node-dev": "^2.0.0"
     },
     "dependencies": {
-        "colors": "1.4.0",
-        "dayjs": "^1.11.9",
         "discord.js": "^14.13.0",
-        "dotenv": "^16.3.1"
+        "dotenv": "^16.3.1",
+        "dayjs": "^1.11.9",
+        "picocolors": "^1.1.1"
     }
 }

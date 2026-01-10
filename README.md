@@ -1,61 +1,178 @@
-# Yumu-Core
+# 🚀 Yumu-Core
 
-Yumu-Core is a basic boilerplate for creating a Discord bot using Discord.js v14, TypeScript, TSX,
-and TSUP for development and build. It uses CommonJS and ES2021 settings.
+Yumu-Core is a **modern, clean and extensible boilerplate** for building Discord bots using
+**Discord.js v14** and **TypeScript**.
 
-## Prerequisites
+The project uses **Bun as its default runtime** for development and builds, focusing on speed and
+great developer experience — while still keeping **full compatibility with Node.js** for anyone who
+prefers it.
 
-Before you begin, you need to have a Discord authentication token in
-[Discord Developers Panel](https://discord.com/developers/applications). Create a `.env` file in the
-root of the project and add the following (or just rename the file `.env.example` to `.env` and put
-your token):
+> ⚡ Bun is the default. Node.js is optional. No lock-in.
 
-```
+---
+
+## ✨ Features
+
+-   🤖 Discord.js v14
+-   🧠 TypeScript with strict configuration
+-   ⚡ Bun-first workflow (fast install, fast dev)
+-   🔁 Optional Node.js support
+-   🎨 Colorized logs with `picocolors`
+-   🔐 Environment configuration with `dotenv`
+-   🐳 Docker support (Bun & Node images)
+-   🧩 Clean and scalable project structure
+
+---
+
+## 🧠 Why Bun?
+
+Bun is used as the default runtime mainly because it offers:
+
+-   🚀 Much faster dependency installation
+-   ⚡ Faster startup and execution for dev scripts
+-   🛠 Built-in TypeScript support (less tooling)
+-   📦 Unified toolchain (`bun install`, `bun run`, `bun build`)
+
+Despite that, **no Bun-specific APIs are required**.
+
+If you prefer Node.js, you can switch runtimes easily using alternative scripts or Docker images.
+
+---
+
+## 📋 Prerequisites
+
+Before starting, you need a Discord bot token.
+
+1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create an application and a bot
+3. Copy the bot token
+
+Create a `.env` file in the project root (or rename `.env.example`):
+
+```env
 DISCORD_TOKEN=your_token_here
 ```
 
-## Installation
+---
 
-To install the dependencies, use the following command:
+## 📦 Installation
+
+### Using Bun (default)
+
+```bash
+bun install
+```
+
+### Using Node.js (optional)
 
 ```bash
 npm install
 # or
 yarn install
+# or
+pnpm install
 ```
 
-## Build
+---
 
-To build the project, use the following command:
+## 🛠 Development Mode
+
+Starts the bot in watch mode and reloads automatically on changes.
+
+### Bun (default)
 
 ```bash
-npm run build
-# or
-yarn build
+bun run dev
 ```
 
-## Start
-
-To start the bot, use the following command:
+### Node.js (optional)
 
 ```bash
-npm run start
-# or
-yarn start
+npm run dev:node
 ```
 
-## Development mode
+---
 
-To start the development mode, use the following command:
+## 📦 Build
+
+Compiles the project into the `dist` directory.
+
+### Bun (default)
 
 ```bash
-npm run dev
-# or
-yarn dev
+bun run build
 ```
 
-This mode watches for changes in the `.ts` files and restarts the bot whenever a change is detected.
+### Node.js (optional)
 
-## License
+```bash
+npm run build:node
+```
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+---
+
+## ▶️ Start (Production)
+
+Runs the compiled bot.
+
+### Bun (default)
+
+```bash
+bun run start
+```
+
+### Node.js (optional)
+
+```bash
+npm run start:node
+```
+
+---
+
+## 🐳 Docker
+
+This project includes **two Docker setups**:
+
+-   **Bun-based image** (default)
+-   **Node.js-based image** (optional)
+
+### Bun Docker image
+
+```bash
+docker build -t yumu-core:bund -f Dockerfile .
+```
+
+```bash
+docker run --env-file .env yumu-core:bund
+```
+
+### Node.js Docker image
+
+```bash
+docker build -t yumu-core:node -f node.Dockerfile .
+```
+
+```bash
+docker run --env-file .env yumu-core:node
+```
+
+---
+
+## 🔄 Runtime choice summary
+
+-   **Bun** → default, recommended
+-   **Node.js** → fully supported, optional
+-   No runtime-specific code
+-   Switching runtimes requires **no code changes**
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+You are free to use, modify and distribute this project.
+
+---
+
+> ✨ Maintained with care by **Vitu2002**
