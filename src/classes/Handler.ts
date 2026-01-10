@@ -59,7 +59,7 @@ export default class Handler {
     private async load(Client: YumuCore, path: string, main_path: string, ident: Identificator) {
         const name = path.split('.')[0];
         const ext = path.split('.')[1];
-        if (!['ts', 'js'].includes(ext)) {
+        if (!['ts', 'js'].includes(ext || '')) {
             this.logger.warn(`Skipping ${name} because ${ext} is not suported`, ident);
             return null;
         }
@@ -96,7 +96,7 @@ export default class Handler {
                 ident
             );
             return;
-        } catch (err) {
+        } catch (err: any) {
             this.logger.error(`Error loading ${name}: ${err.message}`, ident);
             return null;
         }

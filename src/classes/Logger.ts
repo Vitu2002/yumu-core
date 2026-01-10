@@ -1,5 +1,5 @@
-import { cyan, green, grey, magenta, red, yellow } from 'colors';
 import dayjs from 'dayjs';
+import { cyan, gray, green, magenta, red, yellow } from 'picocolors';
 
 export default class Logger {
     identifier: string = 'Logger';
@@ -23,22 +23,22 @@ export default class Logger {
 
     log(message: string, identifier?: string) {
         const ident = identifier || this.identifier;
-        return console.log(`${this.base('log', ident)} ${grey(`${message}`)}`);
+        return console.log(`${this.base('log', ident)} ${gray(`${message}`)}`);
     }
 
     info(message: string, identifier?: string) {
         const ident = identifier || this.identifier;
-        return console.log(`${this.base('info', ident)} ${grey(`${message}`)}`);
+        return console.log(`${this.base('info', ident)} ${gray(`${message}`)}`);
     }
 
     error(message: string, identifier?: string) {
         const ident = identifier || this.identifier;
-        return console.log(`${this.base('error', ident)} ${grey(`${message}`)}`);
+        return console.log(`${this.base('error', ident)} ${gray(`${message}`)}`);
     }
 
     warn(message: string, identifier?: string) {
         const ident = identifier || this.identifier;
-        return console.log(`${this.base('warn', ident)} ${grey(`${message}`)}`);
+        return console.log(`${this.base('warn', ident)} ${gray(`${message}`)}`);
     }
 
     start() {

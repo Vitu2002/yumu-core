@@ -15,7 +15,7 @@ export default class YumuCore extends Client {
     modals = new Collection<string, Modal>();
     events = new Collection<string, Event>();
     logger = new Logger('Discord');
-    loader: Loader;
+    loader!: Loader;
 
     constructor() {
         super({
@@ -29,7 +29,7 @@ export default class YumuCore extends Client {
         new Handler(this);
         this.login(process.env.DISCORD_TOKEN)
             .then(() => {
-                this.logger.log(`Successfully logged as ${this.user.username}`);
+                this.logger.log(`Successfully logged as ${this.user?.username}`);
                 this.loader = new Loader(this);
             })
             .catch(() => {

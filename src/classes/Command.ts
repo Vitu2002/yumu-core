@@ -6,9 +6,9 @@ import {
 import YumuCore from './Core';
 
 export default class Command {
-    name: string;
-    data: SlashCommandBuilder;
-    type: 'global' | 'guild';
-    run: (Client: YumuCore, interaction: ChatInputCommandInteraction) => void | any;
+    name!: string;
+    data!: SlashCommandBuilder;
+    type!: 'global' | 'guild';
+    run!: (Client: YumuCore, interaction: ChatInputCommandInteraction) => void | any;
     autocomplete?: (Client: YumuCore, interaction: AutocompleteInteraction) => void | any;
 }
